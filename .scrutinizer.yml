@@ -1,0 +1,30 @@
+imports:
+  - php
+
+filter:
+  excluded_paths: [vendor/*, tests/*]
+
+build:
+  environment:
+    variables:
+      # DB_DATABASE: "scrutinizer.sqlite"
+      DB_DATABASE: "database/database.sqlite"
+
+  dependencies:
+    before:
+      # - touch scrutinizer.sqlite
+      - touch database/database.sqlite
+
+  nodes:
+    analysis:
+      tests:
+        override:
+          - php-scrutinizer-run
+
+    tests-and-coverage:
+      tests:
+        override:
+          - command: "make phpunit"
+            coverage:
+              file: "build/coverage.clover"
+              format: "php-clover"
