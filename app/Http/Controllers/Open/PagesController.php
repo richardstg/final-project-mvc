@@ -56,11 +56,11 @@ class PagesController extends Controller
         return view('open.contact');
     }
 
-    /**
-     * Login page.
-     */
-    public function login()
-    {
-        return view('open.login');
-    }
+    // /**
+    //  * Login page.
+    //  */
+    // public function login()
+    // {
+    //     return view('open.login');
+    // }
 }

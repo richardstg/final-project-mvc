@@ -21,5 +21,9 @@ Route::get('/about', 'App\Http\Controllers\Open\PagesController@about');
 Route::get('/contact', 'App\Http\Controllers\Open\PagesController@contact');
 Route::get('/login', 'App\Http\Controllers\Open\PagesController@login');
 
+Auth::routes();
+
 // Admin routes
 Route::resource('/admin', 'App\Http\Controllers\Restricted\PostsController');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

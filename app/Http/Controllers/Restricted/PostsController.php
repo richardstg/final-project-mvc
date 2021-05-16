@@ -14,6 +14,11 @@ class PostsController extends Controller
     //     $this->middleware('auth', ['except' => ['show']]);
     // }
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -59,8 +64,7 @@ class PostsController extends Controller
             'content' => $request->input('content'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $image,
-            // 'user_id' => auth()->user()->id
-            'user_id' => 1
+            'user_id' => auth()->user()->id
         ]);
 
         return redirect('/admin')->with('message', 'Your post was created successfully!');
@@ -111,8 +115,7 @@ class PostsController extends Controller
                 'content' => $request->input('content'),
                 'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
                 // 'image_path' => $image,
-                // 'user_id' => auth()->user()->id
-                'user_id' => 1
+                'user_id' => auth()->user()->id
             ]);
 
         return redirect('/admin')

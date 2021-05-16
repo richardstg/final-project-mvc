@@ -22,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ml-5">
+                    {{-- <li class="nav-item ml-5">
                         <a class="nav-link" href="{{ URL::asset('/') }}">Home</a>
                     </li>
                     <li class="nav-item ml-5">
@@ -33,6 +33,15 @@
                     </li>
                     <li class="nav-item ml-5">
                         <a class="nav-link" href="{{ URL::asset('/') }}contact">Contact</a>
+                    </li> --}}
+                    <li class="nav-item ml-5">
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </div>

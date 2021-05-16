@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <p>{{ $post->content }}</p>
+                <p>{!! nl2br($post->content) !!}</p>
             </div>
         </div>
     </div>
