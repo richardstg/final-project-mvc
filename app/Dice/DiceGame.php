@@ -26,7 +26,9 @@ class DiceGame
     public $computerWin;
     public $playerTotalScore;
     public $computerTotalScore;
-
+    public $playerBitcoin;
+    public $computerBitcoin;
+    public $bet;
 
     /**
      * @var integer MAXPOINTS Maximum points.
@@ -52,6 +54,9 @@ class DiceGame
         $this->computerWin = false;
         $this->playerTotalScore = 0;
         $this->computerTotalScore = 0;
+        $this->playerBitcoin = 10;
+        $this->computerBitcoin = 100;
+        $this->bet = null;
     }
 
     /**
@@ -67,17 +72,35 @@ class DiceGame
         $this->playerLastHandGraph = $this->diceHand->graphicalValues();
         $this->protocol["player"] += $this->diceHand->sum();
 
-        // if ($this->protocol["player"] === 21) {
-        //     $this->playerWin = true;
-        //     $this->playerTotalScore += 1;
-        // } else if ($this->protocol["player"] > 21) {
-        //     $this->computerWin = true;
-        //     $this->computerTotalScore += 1;
-        // }
-
         $this->assertPlayerWin();
 
         return $this->diceHand->values();
+    }
+
+    /**
+     * Player win.
+     *
+     * @return void
+     */
+    public function playerWin()
+    {
+        $this->playerWin = true;
+        $this->playerTotalScore += 1;
+        $this->playerBitcoin += $this->bet;
+        $this->computerBitcoin -= $this->bet;
+    }
+
+    /**
+     * Computer win.
+     *
+     * @return void
+     */
+    public function computerWin()
+    {
+        $this->computerWin = true;
+        $this->computerTotalScore += 1;
+        $this->playerBitcoin -= $this->bet;
+        $this->computerBitcoin += $this->bet;
     }
 
     /**
@@ -88,11 +111,9 @@ class DiceGame
     public function assertPlayerWin()
     {
         if ($this->protocol["player"] === 21) {
-            $this->playerWin = true;
-            $this->playerTotalScore += 1;
+            $this->playerWin();
         } else if ($this->protocol["player"] > 21) {
-            $this->computerWin = true;
-            $this->computerTotalScore += 1;
+            $this->computerWin();
         }
     }
 
@@ -104,12 +125,10 @@ class DiceGame
     public function assertComputerWin()
     {
         if ($this->protocol["computer"] > 21) {
-            $this->playerWin = true;
-            $this->playerTotalScore += 1;
+            $this->playerWin();
             return;
         }
-        $this->computerWin = true;
-        $this->computerTotalScore += 1;
+        $this->computerWin();
     }
 
     /**
@@ -125,14 +144,6 @@ class DiceGame
             $this->computerLastHandSum = $this->diceHand->sum();
             $this->protocol["computer"] += $this->diceHand->sum();
         }
-
-        // if ($this->protocol["computer"] > 21) {
-        //     $this->playerWin = true;
-        //     $this->playerTotalScore += 1;
-        // } else {
-        //     $this->computerWin = true;
-        //     $this->computerTotalScore += 1;
-        // }
 
         $this->assertComputerWin();
 
@@ -154,5 +165,6 @@ class DiceGame
         $this->computerLastHandSum = 0;
         $this->playerWin = false;
         $this->computerWin = false;
+        $this->bet = null;
     }
 }

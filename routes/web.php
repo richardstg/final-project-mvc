@@ -13,22 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@index');
+// Public routes
+Route::get('/', 'App\Http\Controllers\Open\PagesController@index');
+Route::get('/blog', 'App\Http\Controllers\Open\PagesController@blog');
+Route::get('/blog/{slug}', 'App\Http\Controllers\Open\PagesController@post');
+Route::get('/about', 'App\Http\Controllers\Open\PagesController@about');
+Route::get('/contact', 'App\Http\Controllers\Open\PagesController@contact');
+Route::get('/login', 'App\Http\Controllers\Open\PagesController@login');
 
-// Dice game routes
-Route::get('/dice', 'App\Http\Controllers\Dice\GetDiceGame@index');
-Route::post('/dice', 'App\Http\Controllers\Dice\PostDiceGame@index');
-Route::get('/dice/play', 'App\Http\Controllers\Dice\GetDiceGamePlay@index');
-Route::post('/dice/play', 'App\Http\Controllers\Dice\PostDiceGamePlay@index');
-Route::post('/dice/computerplay', 'App\Http\Controllers\Dice\PostDiceGameComputerPlay@index');
-Route::get('/dice/results', 'App\Http\Controllers\Dice\GetDiceGameResults@index');
-
-// Roll dices routes
-Route::get('/rolldices', 'App\Http\Controllers\RollDices\RollDices@get');
-Route::post('/rolldices', 'App\Http\Controllers\RollDices\RollDices@post');
-
-// Books routes
-Route::get('/books', 'App\Http\Controllers\Books\BooksController@get');
-
-// Highscore routes
-Route::get('/highscore', 'App\Http\Controllers\Highscore\HighscoreController@get');
+// Admin routes
+Route::resource('/admin', 'App\Http\Controllers\Restricted\PostsController');

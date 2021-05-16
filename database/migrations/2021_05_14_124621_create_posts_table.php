@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHighscoresTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateHighscoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('highscores', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->integer('player_points');
-            $table->integer('computer_points');
+            $table->string('slug');
+            $table->string('title');
+            $table->string('content');
+            $table->string('image_path');
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -28,6 +32,6 @@ class CreateHighscoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('highscores');
+        Schema::dropIfExists('posts');
     }
 }
