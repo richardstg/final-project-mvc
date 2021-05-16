@@ -88,7 +88,7 @@ body {
     height: 300px;
     /* border-radius: 0.5rem; */
     padding: 20px;
-    background-image: url("../img/hero.jpg");
+    /* background-image: url("../img/hero.jpg"); */
     width: 100%;
     background-size: cover;
     background-position: center;

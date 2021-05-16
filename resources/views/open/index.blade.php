@@ -13,7 +13,48 @@
         </div>
     </div>
     <div class="blog-post-cards container">
-        <div class="row mb-5">
+        @foreach ($posts as $post)
+            <div class="row mb-5">
+                <div class="col-sm">
+                    <a href="{{ URL::asset('/') }}blog/{{ $post->slug }}">
+                        <div class="blog-post-card shadow-sm"
+                            style="background-image: url('{{ URL::asset('/') }}blogimages/{{ $post->image_path }}')">
+                            <div class="overlay-dark"></div>
+                            <div class="blog-post-card-content">
+                                <h3 class="text-white">{{ $post->title }}</h3>
+                                <p class="text-light">{{ date('jS M Y', strtotime($post->created_at)) }}</p>
+                                <p class="text-light">By {{ $post->user->name }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+        @endforeach
+        {{-- <div class="col-sm">
+                <a href="./blog/this-is-a-post">
+                    <div class="blog-post-card shadow-sm">
+                        <div class="overlay-dark"></div>
+                        <div class="blog-post-card-content">
+                            <h3 class="text-white">This is a post</h3>
+                            <p class="text-light">2011-06-01</p>
+                            <p class="text-light">John Doe</p>
+                        </div>
+                    </div>
+                </a>
+            </div> --}}
+        {{-- <div class="col-sm">
+                <a href="./blog/this-is-a-post">
+                    <div class="blog-post-card shadow-sm">
+                        <div class="overlay-dark"></div>
+                        <div class="blog-post-card-content">
+                            <h3 class="text-white">This is a post</h3>
+                            <p class="text-light">2011-06-01</p>
+                            <p class="text-light">John Doe</p>
+                        </div>
+                    </div>
+                </a>
+            </div> --}}
+    </div>
+    {{-- <div class="row mb-5">
             <div class="col-sm">
                 <a href="./blog/this-is-a-post">
                     <div class="blog-post-card shadow-sm">
@@ -34,7 +75,6 @@
                             <h3 class="text-white">This is a post</h3>
                             <p class="text-light">2011-06-01</p>
                             <p class="text-light">John Doe</p>
-                            {{-- <button class="button">Read</button> --}}
                         </div>
                     </div>
                 </a>
@@ -51,45 +91,7 @@
                     </div>
                 </a>
             </div>
-        </div>
-        <div class="row mb-5">
-            <div class="col-sm">
-                <a href="./blog/this-is-a-post">
-                    <div class="blog-post-card shadow-sm">
-                        <div class="overlay-dark"></div>
-                        <div class="blog-post-card-content">
-                            <h3 class="text-white">This is a post</h3>
-                            <p class="text-light">2011-06-01</p>
-                            <p class="text-light">John Doe</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm">
-                <a href="./blog/this-is-a-post">
-                    <div class="blog-post-card shadow-sm">
-                        <div class="overlay-dark"></div>
-                        <div class="blog-post-card-content">
-                            <h3 class="text-white">This is a post</h3>
-                            <p class="text-light">2011-06-01</p>
-                            <p class="text-light">John Doe</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm">
-                <a href="./blog/this-is-a-post">
-                    <div class="blog-post-card shadow-sm">
-                        <div class="overlay-dark"></div>
-                        <div class="blog-post-card-content">
-                            <h3 class="text-white">This is a post</h3>
-                            <p class="text-light">2011-06-01</p>
-                            <p class="text-light">John Doe</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+        </div> --}}
     </div>
 
 @endsection
