@@ -14,13 +14,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A voluptas ipsum cum reiciendis nesciunt sint
-                    similiqueLorem ipsum dolor sit, amet consectetur adipisicing elit. A voluptas ipsum cum reiciendis
-                    nesciunt
-                    sint
-                    similique
-                    fugit delectus explicabo? Quae adipisci non earum, atque expedita ex. Nemo iure eos iusto.
-                    fugit delectus explicabo? Quae adipisci non earum, atque expedita ex. Nemo iure eos iusto.</p>
+                @foreach ($posts as $post)
+                    <div class="row">
+                        <div class="col">
+                            <h3><a href="{{ URL::asset('/') }}blog/{{ $post->slug }}">{{ $post->title }}</a></h3>
+                            <p>{{ date('jS M Y', strtotime($post->created_at)) }}</p>
+                            <p>By {{ $post->user->name }}</p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

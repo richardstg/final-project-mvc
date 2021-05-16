@@ -25,7 +25,8 @@ class PagesController extends Controller
      */
     public function blog()
     {
-        return view('open.blog');
+        return view('open.blog')
+            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
     }
 
     /**
@@ -55,12 +56,4 @@ class PagesController extends Controller
     {
         return view('open.contact');
     }
-
-    // /**
-    //  * Login page.
-    //  */
-    // public function login()
-    // {
-    //     return view('open.login');
-    // }
 }
