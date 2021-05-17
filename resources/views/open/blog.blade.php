@@ -17,7 +17,7 @@
                 @foreach ($posts as $post)
                     <div class="row">
                         <div class="col">
-                            <h3><a href="{{ URL::asset('/') }}blog/{{ $post->slug }}">{{ $post->title }}</a></h3>
+                            <h2><a href="{{ URL::asset('/') }}blog/{{ $post->slug }}">{{ $post->title }}</a></h2>
                             <p>{{ date('jS M Y', strtotime($post->created_at)) }}</p>
                             <p>By {{ $post->user->name }}</p>
                         </div>

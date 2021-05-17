@@ -13,8 +13,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm">
-        <div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        {{-- <div class="noise"></div> --}}
+        <div class="container-fluid" style="position: relative; z-index: 5">
             <a class="navbar-brand mr-auto" href="{{ URL::asset('/') }}">Navbar brand</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +43,8 @@
         @yield('content')
     </main>
     <footer class="footer pt-5 pb-5">
-        <div class="container">
+        <div class="noise"></div>
+        <div class="container" style="position: relative; z-index: 5">
             <span class="text-light">Place sticky footer content here.</span>
         </div>
     </footer>
