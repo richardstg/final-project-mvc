@@ -3,7 +3,7 @@
 @section('title', 'Update post')
 
 @section('content')
-    <div class="container">
+    <div class="container page-container">
         <h1 class="text-center">Update post</h1>
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
@@ -19,7 +19,7 @@
                             <input type="file" name="image" class="hidden">
                         </label>
                     </div> --}}
-                    <button type="submit" class="button">Submit</button>
+                    <button type="submit" class="button button-black">Submit</button>
                     @csrf
                     @method('PUT')
                 </form>

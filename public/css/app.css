@@ -15,34 +15,42 @@ body {
     position: relative;
     padding-bottom: 350px;
     font-family: 'Lora', serif;
+    /* background-color: #141414; */
 }
 
 .navbar {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    background-color: #2d2d2d00 !important;
-    position: absolute;
+    background-color: #ffffff !important;
+    /* position: absolute;
+    top: 0;
     z-index: 10;
-    width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.nav-link {
+    color: white !important;
+    /* background-color: black; */
+    background-color: #2D2D2D;
 }
 
 .hero {
     position: relative;
     /* background-image: url("../img/hero.jpg"); */
-    background-color: #2D2D2D;
-    min-height: 80vh;
+    /* background-color: #030303; */
+    min-height: 60vh;
     width: 100%;
-    /* background-size: cover;
-    background-position: center; */
-    text-align: center;
+    background-size: cover;
+    background-position: center;
+    /* text-align: center; */
 }
 
 .hero-bg-image {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("../img/hero.jpg");
+    /* background-image: url("../img/hero.jpg"); */
     /* width: 100%; */
     background-size: cover;
     background-position: center;
@@ -58,7 +66,7 @@ body {
     width: 100%;
     height: 100%;
     background-image: url("../img/noisy2.png");
-    opacity: 0.08;
+    opacity: 0.1;
     /* z-index: 4; */
 }
 
@@ -84,19 +92,35 @@ body {
     /* border-top: 1px solid rgba(255, 255, 255, 0.15); */
 }
 
+.page-container {
+    /* padding-top: 80px;
+    padding-bottom: 80px; */
+}
+
+hr.line-black-left {
+    border: 0;
+    height: 2.5px;
+    background-color: #2D2D2D;
+    width: 66px;
+    margin-left: 0px;
+}
+
+
 /* Button styling */
 
 .button {
-    font-family: 'Lora', serif;
+    font-family: 'Montserrat', sans-serif;
     padding: 8px 15px;
-    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.1s ease-in-out;
+    /* text-transform: uppercase; */
 }
 
 .button-black {
     background-color: black;
     color: white;
     /* border-radius: 0.5rem; */
-    border: 1px solid black;
+    border: 2px solid black;
     /* font-weight: bold; */
 }
 
@@ -109,11 +133,32 @@ body {
     background-color: rgb(20, 20, 20);
 }
 
+.button-black-inverse {
+    background-color: transparent;
+    color: black;
+    /* border-radius: 0.5rem; */
+    border: 2px solid black;
+    /* font-weight: bold; */
+}
+
+.button-black-inverse a {
+    color: black;
+    text-decoration: none;
+}
+
+.button-black-inverse:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.button-black-inverse:hover a {
+    color: white;
+}
+
 .button-white {
     background-color: white;
     color: black;
     /* border-radius: 0.5rem; */
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 .button-white a {
@@ -148,7 +193,6 @@ body {
 
 .button-large {
     padding: 10px 50px;
-    /* font-size: 0.8rem; */
 }
 
 
@@ -167,7 +211,7 @@ body {
 
 .blog-post-cards {
     position: relative;
-    margin-top: -80px;
+    /* margin-top: -80px; */
 }
 
 .blog-post-card {
@@ -199,7 +243,7 @@ body {
     width: 100%;
     height: 100%;
     background-image: url("../img/noisy2.png");
-    opacity: 0.08;
+    opacity: 0.1;
 }
 
 .blog-post-card-content {
@@ -210,6 +254,7 @@ body {
 .blog-post-card:hover {
     /* transform: scale(1.01, 1.01); */
     transition: all 0.1s ease-in-out;
+    transform: translateY(-2.5%) scale(1.01, 1.01);
 }
 
 .blog-post-card-content {
@@ -229,11 +274,11 @@ body {
     width: 100%;
     /* background-color: rgba(0, 0, 0, 0.418); */
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.0) 0%,rgba(0, 0, 0, 0.662) 100%);
-    /* background: radial-gradient(
+    background: radial-gradient(
     circle,
     rgba(0, 0, 0, 0.0) 0%,
     rgba(0, 0, 0, 0.562) 100%
-    ); */
+    );
 }
 
 
@@ -275,7 +320,7 @@ body {
     bottom: 0px;
     height: 350px;
     background-color: #2D2D2D;
-    background-color: #7a7a7a;
+    /* background-color: #7a7a7a; */
     text-align: center;
 }
 
@@ -285,10 +330,22 @@ body {
 .form input,
 .form textarea {
     width: 100%;
+    padding: 0.5rem;
 }
 
+[hidden] {
+    display: none !important;
+}
 
 @media (max-width: 767px) {
+    /* .navbar-collapse {
+        background-color:rgba(53, 53, 53, 0.616);
+    } */
+    .navbar-collapse .nav-link {
+        color: black !important;
+        /* background-color: black; */
+        background-color: #ffffff;
+    }
     .navbar li {
         margin-left: 0px !important;
     }

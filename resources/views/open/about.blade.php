@@ -3,19 +3,11 @@
 @section('title', 'About')
 
 @section('content')
-
-    <div class="about-hero display-flex center-align mb-5"
-        style="background-image: url('{{ URL::asset('/') }}img/hero.jpg')">
-        <div class="overlay-dark"></div>
-        <div class="noise"></div>
-        <div class="container hero-content">
-            <h1 class="text-white mb-4">About</h1>
-        </div>
-    </div>
-    <div class="container">
-        {{-- <h1>About</h1> --}}
+    <div class="container page-container pt-4 pb-4">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
+                <h1 class="text-black mb-0">About</h1>
+                <hr class="line-black-left" />
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A voluptas ipsum cum reiciendis nesciunt sint
                     similiqueLorem ipsum dolor sit, amet consectetur adipisicing elit. A voluptas ipsum cum reiciendis
                     nesciunt

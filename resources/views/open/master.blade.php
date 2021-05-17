@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
         {{-- <div class="noise"></div> --}}
-        <div class="container-fluid" style="position: relative; z-index: 5">
-            <a class="navbar-brand mr-auto" href="{{ URL::asset('/') }}">Navbar brand</a>
+        <div class="container" style="position: relative; z-index: 5">
+            <a class="navbar-brand mr-auto" href="{{ URL::asset('/') }}">Logo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

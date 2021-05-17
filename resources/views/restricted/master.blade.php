@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm mb-4">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
         <div class="container">
             <a class="navbar-brand mr-auto" href="{{ URL::asset('/') }}">Navbar brand</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
