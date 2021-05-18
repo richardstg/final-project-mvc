@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         {{-- <div class="noise"></div> --}}
         <div class="container" style="position: relative; z-index: 5">
-            <a class="navbar-brand mr-auto" href="{{ URL::asset('/') }}">Logo</a>
+            <a class="navbar-brand mr-auto" href="{{ URL::asset('/') }}">TravelBlogger</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
     <footer class="footer pt-5 pb-5">
         <div class="noise"></div>
         <div class="container" style="position: relative; z-index: 5">
-            <span class="text-light">Place sticky footer content here.</span>
+            <span class="text-light">&copy; 2021 TravelBlogger</span>
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

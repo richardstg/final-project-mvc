@@ -3,12 +3,18 @@
 @section('title', 'Home')
 
 @section('content')
-    <div class="hero display-flex center-align mb-0">
+    <div class="hero display-flex flex-column justify-content-center mb-0">
         {{-- <div class="hero-bg-image"></div> --}}
         {{-- <div class="overlay-dark"></div> --}}
+        <div class="position-relative w-100">
+            <div class="hero-bg-black"></div>
+            <div class="container hero-content">
+                <h1 class="display-3 text-white mb-2 font-weight-bold">Lorem
+                    ipsum<br>consectetur</h1>
+            </div>
+        </div>
         <div class="container hero-content">
-            <h1 class="display-3 text-black mb-2 font-weight-bold">Lorem ipsum<br>consectetur</h1>
-            <h2 class="text-dark mb-4 font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+            <h2 class="text-dark mb-4 mt-2 font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
             <button class="button button-black-inverse button-large"><a href="{{ URL::asset('/') }}blog">Read
                     Blog</a></button>
         </div>
