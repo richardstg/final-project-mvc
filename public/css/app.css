@@ -134,6 +134,10 @@ hr.line-black-left {
     /* text-transform: uppercase; */
 }
 
+.button:hover {
+    cursor: pointer;
+}
+
 .button-black {
     background-color: black;
     color: white;
@@ -168,7 +172,8 @@ hr.line-black-left {
     background-color: rgba(0, 0, 0, 1);
 }
 
-.button-black-inverse:hover a {
+.button-black-inverse:hover a,
+.button-black-inverse:hover {
     color: white;
 }
 

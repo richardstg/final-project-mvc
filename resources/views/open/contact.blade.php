@@ -8,13 +8,14 @@
             <div class="col-lg-8 offset-lg-2">
                 <h1 class="text-black mb-0">Contact</h1>
                 <hr class="line-black-left" />
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A voluptas ipsum cum reiciendis nesciunt sint
-                    similiqueLorem ipsum dolor sit, amet consectetur adipisicing elit. A voluptas ipsum cum reiciendis
-                    nesciunt
-                    sint
-                    similique
-                    fugit delectus explicabo? Quae adipisci non earum, atque expedita ex. Nemo iure eos iusto.
-                    fugit delectus explicabo? Quae adipisci non earum, atque expedita ex. Nemo iure eos iusto.</p>
+                <form class="form">
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="Your email adress..." class="mb-3"><br>
+                    <label for="message">Content:</label><br>
+                    <textarea id="message" name="message" rows="8" class="mb-3"
+                        placeholder="Type your message..."></textarea><br>
+                    <button type="submit" class="button button-black" disabled>Submit</button>
+                </form>
             </div>
         </div>
 

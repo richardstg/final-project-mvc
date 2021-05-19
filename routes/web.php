@@ -26,4 +26,4 @@ Auth::routes();
 // Admin routes
 Route::resource('/admin', 'App\Http\Controllers\Restricted\PostsController');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

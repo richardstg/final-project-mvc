@@ -27,7 +27,7 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
         <div class="container">
-            <a class="navbar-brand mr-auto" href="{{ URL::asset('/') }}">Navbar brand</a>
+            <a class="navbar-brand mr-auto" href="{{ URL::asset('/') }}">TravelBlogger</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

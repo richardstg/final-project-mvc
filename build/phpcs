@@ -1,0 +1,15 @@
+
+Fatal error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 2097160 bytes) in phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Tokenizers/JS.php on line 2
+
+Call Stack:
+    0.0015     405032   1. {main}() C:\Users\jag\dbwebb-kurser\mvc\me\proj\.bin\phpcs:0
+    0.0172     788000   2. PHP_CodeSniffer\Runner->runPHPCS() C:\Users\jag\dbwebb-kurser\mvc\me\proj\.bin\phpcs:6
+    0.3087    4649152   3. PHP_CodeSniffer\Runner->run() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Runner.php:2
+   67.0691   37910920   4. PHP_CodeSniffer\Runner->processFile() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Runner.php:2
+   67.0691   37910920   5. PHP_CodeSniffer\Files\LocalFile->process() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Runner.php:2
+   67.0691   37910920   6. PHP_CodeSniffer\Files\LocalFile->process() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Files/LocalFile.php:2
+   67.0691   37910920   7. PHP_CodeSniffer\Files\LocalFile->parse() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Files/File.php:2
+   67.0691   37911232   8. PHP_CodeSniffer\Tokenizers\JS->__construct() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Files/File.php:2
+   67.0695   37911232   9. PHP_CodeSniffer\Tokenizers\JS->__construct() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Tokenizers/JS.php:2
+   67.0695   37911232  10. PHP_CodeSniffer\Tokenizers\JS->tokenize() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Tokenizers/Tokenizer.php:2
+

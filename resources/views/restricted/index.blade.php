@@ -3,7 +3,7 @@
 @section('title', 'Admin')
 
 @section('content')
-    <div class="container page-container">
+    <div class="container pt-4 pb-4">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
                 <h1 class="text-center">Create post</h1>
@@ -25,17 +25,27 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <p class="mb-0"><strong>{{ session()->get('message') }}</strong></p>
+                        <p class="mb-0">{{ session()->get('message') }}</p>
                     </div>
                 @endif
+                {{-- @if (session('status'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif --}}
                 <form action="" method="POST" enctype="multipart/form-data" class="form">
                     <label for="title">Title:</label><br>
-                    <input type="text" id="title" name="title" placeholder="Title..." class="mb-3"><br>
+                    <input type="text" id="title" name="title" placeholder="Title..." class="mb-3" required><br>
+                    {{-- @error('title')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror --}}
                     <label for="content">Content:</label><br>
-                    <textarea id="content" name="content" rows="8" placeholder="Write your post..."
-                        class="mb-3"></textarea><br>
+                    <textarea id="content" name="content" rows="8" placeholder="Write your post..." class="mb-3"
+                        required></textarea><br>
                     <div>
-                        <label class="button button-black-reverse">
+                        <label class="button button-black-inverse">
                             Choose image <input type="file" name="image" hidden
                                 onchange="$('#upload-file-info').text(this.files[0].name)">
                         </label>
@@ -59,7 +69,7 @@
                             <p class="mb-1">By {{ $post->user->name }}</p>
                         </div>
                         <div class="col">
-                            <button class="button button-black-reverse button-small mb-1"><a
+                            <button class="button button-black-inverse button-small mb-1"><a
                                     href="{{ URL::asset('/') }}admin/{{ $post->slug }}/edit">Update</a></button><br />
                             <button type="button" class="button button-black button-small mb-1" data-toggle="modal"
                                 data-target="#exampleModal">
@@ -88,20 +98,12 @@
                                                 @csrf
                                                 @method('delete')
                                             </form>
-                                            <button type="button" class="button button-black-reverse"
+                                            <button type="button" class="button button-black-inverse"
                                                 data-dismiss="modal">Cancel</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            {{-- <form action="{{ URL::asset('/') }}admin/{{ $post->slug }}" method="POST">
-                                <button type="submit" class="button button-small mb-1">
-                                    Delete
-                                </button>
-                                @csrf
-                                @method('delete')
-                            </form> --}}
                         </div>
                     </div>
                 @endforeach
