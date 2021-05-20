@@ -16,7 +16,7 @@
     <div class="container page-container pt-4 pb-4">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <p><a class="text-dark" href=href="{{ URL::asset('/') }}blog">Blog </a>> {{ $post->slug }}</p>
+                <p><a class="text-dark" href=href="{{ URL::asset('/') }}blog">Blog </a>> {{ $post->title }}</p>
                 <h1 class="text-black display-5 mb-3">{{ $post->title }}</h1>
                 <hr class="line-black-left" />
                 <p class="text-dark">{{ date('jS M Y', strtotime($post->created_at)) }}</p>
