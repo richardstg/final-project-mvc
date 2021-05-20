@@ -1,0 +1,21 @@
+PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
+
+.[41;37mF[0m..                                                                4 / 4 (100%)
+
+Time: 00:04.878, Memory: 34.00 MB
+
+There was 1 failure:
+
+1) App\Http\Controllers\Restricted\PostsControllerTest::testStore
+Response status code [419] is not a redirect status code.
+Failed asserting that false is true.
+
+C:\Users\jag\dbwebb-kurser\mvc\me\proj\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:202
+C:\Users\jag\dbwebb-kurser\mvc\me\proj\tests\Unit\Controller\PostsControllerTest.php:46
+
+[37;41mFAILURES![0m
+[37;41mTests: 4[0m[37;41m, Assertions: 6[0m[37;41m, Failures: 1[0m[37;41m.[0m
+
+Generating code coverage report in Clover XML format ... done [00:00.014]
+
+Generating code coverage report in HTML format ... done [00:00.108]
