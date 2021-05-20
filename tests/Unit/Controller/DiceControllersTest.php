@@ -6,8 +6,9 @@ use App\Dice\DiceGame;
 use App\Dice\DiceHand;
 use App\Http\Controllers\RollDices\RollDices;
 use Illuminate\Http\Request;
-// use Illuminate\Http\Response;
 use Tests\TestCase;
+
+// use Illuminate\Http\Response;
 // use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 /**
