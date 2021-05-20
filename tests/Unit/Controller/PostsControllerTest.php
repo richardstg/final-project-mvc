@@ -62,9 +62,9 @@ class PostsControllerTest extends TestCase
         $this->be($user); // Authenticated
 
         $response = $this->get('/admin/bangkok-2/edit');
-        // $response->assertSuccessful();
+        $response->assertSuccessful();
         $response->assertViewIs('restricted.update');
-        // $response->assertViewHas('post');
+        $response->assertViewHas('post');
     }
 
     // /**
@@ -83,5 +83,9 @@ class PostsControllerTest extends TestCase
     // {
     //     $user = new User(array('name' => 'John'));
     //     $this->be($user); // Authenticated
+
+    //     $response = $this->delete('/admin/bangkok-2');
+    //     // $response->assertSuccessful();
+    //     $response->assertRedirect("/admin");
     // }
 }
