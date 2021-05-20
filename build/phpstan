@@ -1,36 +1,34 @@
  ------ --------------------------------------------------------------- 
  [32m Line [39m [32m app\Http\Controllers\Auth\RegisterController.php              [39m 
  ------ --------------------------------------------------------------- 
-  67     Call to an undefined static method App\Models\User::create().  
+  66     Call to an undefined static method App\Models\User::create().  
  ------ --------------------------------------------------------------- 
 
- ------ --------------------------------------------------------------------------------------------------------------------------------------------- 
- [32m Line [39m [32m app\Http\Controllers\Open\PagesController.php                                                                                               [39m 
- ------ --------------------------------------------------------------------------------------------------------------------------------------------- 
-  21     Call to an undefined static method App\Models\Post::orderBy().                                                                               
-  30     Call to an undefined static method App\Models\Post::orderBy().                                                                               
-  41     Method App\Http\Controllers\Open\PagesController::post() should return Illuminate\Http\Response but returns Illuminate\Contracts\View\View.  
-  42     Call to an undefined static method App\Models\Post::where().                                                                                 
- ------ --------------------------------------------------------------------------------------------------------------------------------------------- 
+ ------ ---------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\Open\PagesController.php                  [39m 
+ ------ ---------------------------------------------------------------- 
+  21     Call to an undefined static method App\Models\Post::orderBy().  
+  30     Call to an undefined static method App\Models\Post::orderBy().  
+  49     Call to an undefined static method App\Models\Post::where().    
+ ------ ---------------------------------------------------------------- 
 
- ------ ------------------------------------------------------------------------------------------------------------------------------------------ 
- [32m Line [39m [32m app\Http\Controllers\Restricted\PostsController.php                                                                                      [39m 
- ------ ------------------------------------------------------------------------------------------------------------------------------------------ 
-  36     Call to an undefined static method App\Models\Post::orderBy().                                                                            
-  46     Method App\Http\Controllers\Restricted\PostsController::create() should return Illuminate\Http\Response but return statement is missing.  
-  70     Access to an undefined property Illuminate\Http\Request::$image.                                                                          
-  70     Access to an undefined property Illuminate\Http\Request::$title.                                                                          
-  72     Access to an undefined property Illuminate\Http\Request::$image.                                                                          
-  75     Call to an undefined static method App\Models\Post::create().                                                                             
-  78     Access to an undefined property Illuminate\Http\Request::$title.                                                                          
-  80     Access to an undefined property Illuminate\Contracts\Auth\Authenticatable::$id.                                                           
-  102    Call to an undefined static method App\Models\Post::where().                                                                              
-  121    Call to an undefined static method App\Models\Post::where().                                                                              
-  147    Call to an undefined static method App\Models\Post::where().                                                                              
-  151    Access to an undefined property Illuminate\Http\Request::$title.                                                                          
-  153    Access to an undefined property Illuminate\Contracts\Auth\Authenticatable::$id.                                                           
-  175    Call to an undefined static method App\Models\Post::where().                                                                              
- ------ ------------------------------------------------------------------------------------------------------------------------------------------ 
+ ------ --------------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\Restricted\PostsController.php                             [39m 
+ ------ --------------------------------------------------------------------------------- 
+  36     Call to an undefined static method App\Models\Post::orderBy().                   
+  70     Access to an undefined property Illuminate\Http\Request::$image.                 
+  70     Access to an undefined property Illuminate\Http\Request::$title.                 
+  72     Access to an undefined property Illuminate\Http\Request::$image.                 
+  75     Call to an undefined static method App\Models\Post::create().                    
+  78     Access to an undefined property Illuminate\Http\Request::$title.                 
+  80     Access to an undefined property Illuminate\Contracts\Auth\Authenticatable::$id.  
+  102    Call to an undefined static method App\Models\Post::where().                     
+  121    Call to an undefined static method App\Models\Post::where().                     
+  147    Call to an undefined static method App\Models\Post::where().                     
+  151    Access to an undefined property Illuminate\Http\Request::$title.                 
+  153    Access to an undefined property Illuminate\Contracts\Auth\Authenticatable::$id.  
+  175    Call to an undefined static method App\Models\Post::where().                     
+ ------ --------------------------------------------------------------------------------- 
 
  ------ ------------------------------------------------------------------------------------------------------------------- 
  [32m Line [39m [32m app\Http\Middleware\Authenticate.php                                                                              [39m 
@@ -39,6 +37,6 @@
  ------ ------------------------------------------------------------------------------------------------------------------- 
 
 [37;41m                                                                                                                        [39;49m
-[37;41m [ERROR] Found 20 errors                                                                                                [39;49m
+[37;41m [ERROR] Found 18 errors                                                                                                [39;49m
 [37;41m                                                                                                                        [39;49m
 
