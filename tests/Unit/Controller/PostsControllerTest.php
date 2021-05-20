@@ -30,26 +30,58 @@ class PostsControllerTest extends TestCase
         $response->assertViewHas('posts');
     }
 
+    // /**
+    //  * Test index
+    //  */
+    // public function testStore()
+    // {
+    //     $user = new User(array('name' => 'John'));
+    //     $this->be($user); // Authenticated
+
+    //     $response = $this->call('POST', '/admin', [
+    //         'title' => 'mock title',
+    //         'content' => 'just some text',
+    //         'image' => UploadedFile::fake()->image('file.png')->size(1)
+    //     ]);
+    //     $response->assertRedirect("/admin");
+
+    //     // // Assert the file was stored...
+    //     // Storage::disk('blogimages')->assertExists('file.png');
+
+    //     // // Assert a file does not exist...
+    //     // Storage::disk('blogimages')->assertMissing('another_file.png');
+    //     // $response->assertSuccessful();
+    // }
+
     /**
-     * Test index
+     * Test edit
      */
-    public function testStore()
+    public function testEdit()
     {
         $user = new User(array('name' => 'John'));
         $this->be($user); // Authenticated
 
-        $response = $this->post('/admin', [
-            'title' => 'mock title',
-            'content' => 'just some text',
-            'image' => UploadedFile::fake()->image('file.png')->size(1)
-        ]);
-        $response->assertRedirect("/admin");
-
-        // // Assert the file was stored...
-        // Storage::disk('blogimages')->assertExists('file.png');
-
-        // // Assert a file does not exist...
-        // Storage::disk('blogimages')->assertMissing('another_file.png');
+        $response = $this->get('/admin/bangkok-2/edit');
         // $response->assertSuccessful();
+        $response->assertViewIs('restricted.update');
+        // $response->assertViewHas('post');
     }
+
+    // /**
+    //  * Test update
+    //  */
+    // public function testUpdate()
+    // {
+    //     $user = new User(array('name' => 'John'));
+    //     $this->be($user); // Authenticated
+    // }
+
+    // /**
+    //  * Test destroy
+    //  */
+    // public function testDestroy()
+    // {
+    //     $user = new User(array('name' => 'John'));
+    //     $this->be($user); // Authenticated
+    // }
 }

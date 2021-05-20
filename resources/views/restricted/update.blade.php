@@ -3,7 +3,7 @@
 @section('title', 'Update post')
 
 @section('content')
-    <div class="container page-container">
+    <div class="container pt-4 pb-4">
         <h1 class="text-center">Update post</h1>
         <div class="row">
             <div class="col-lg-8 offset-lg-2">

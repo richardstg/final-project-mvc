@@ -90,17 +90,17 @@ class PostsController extends Controller
     //  * @return \Illuminate\Http\Response
     //  */
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  string  $slug
-     * @return \Illuminate\Contracts\View\View
-     */
-    public function show($slug)
-    {
-        return view('open.post')
-            ->with('post', Post::where('slug', $slug)->first());
-    }
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  string  $slug
+    //  * @return \Illuminate\Contracts\View\View
+    //  */
+    // public function show($slug)
+    // {
+    //     return view('open.post')
+    //         ->with('post', Post::where('slug', $slug)->first());
+    // }
 
     // /**
     //  * Show the form for editing the specified resource.
