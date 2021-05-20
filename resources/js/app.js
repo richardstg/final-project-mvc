@@ -1,1 +1,3 @@
-require('./bootstrap');
+// phpcs:ignoreFile
+
+require("./bootstrap");

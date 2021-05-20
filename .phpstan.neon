@@ -4,5 +4,7 @@ parameters:
         - config
         - app
         #- tests
+        #- node_modules
+
     bootstrapFiles:
         - .phpstan.constants.php

@@ -19,10 +19,16 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
+    // /**
+    //  * Display a listing of the resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -30,21 +36,28 @@ class PostsController extends Controller
             ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    // /**
+    //  * Show the form for creating a new resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function create()
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * Store a newly created resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @return \Illuminate\Http\Response
+    //  */
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -70,11 +83,18 @@ class PostsController extends Controller
         return redirect('/admin')->with('message', 'Your post was created successfully!');
     }
 
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  string  $slug
+    //  * @return \Illuminate\Http\Response
+    //  */
+
     /**
      * Display the specified resource.
      *
      * @param  string  $slug
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function show($slug)
     {
@@ -82,11 +102,18 @@ class PostsController extends Controller
             ->with('post', Post::where('slug', $slug)->first());
     }
 
+    // /**
+    //  * Show the form for editing the specified resource.
+    //  *
+    //  * @param  string  $slug
+    //  * @return \Illuminate\Http\Response
+    //  */
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  string  $slug
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function edit($slug)
     {
@@ -94,12 +121,20 @@ class PostsController extends Controller
             ->with('post', Post::where('slug', $slug)->first());
     }
 
+    // /**
+    //  * Update the specified resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  string  $slug
+    //  * @return \Illuminate\Http\Response
+    //  */
+
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  string  $slug
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $slug)
     {
@@ -122,11 +157,18 @@ class PostsController extends Controller
             ->with('message', 'Your post was updated successfully!');
     }
 
+    // /**
+    //  * Remove the specified resource from storage.
+    //  *
+    //  * @param  string  $slug
+    //  * @return \Illuminate\Http\Response
+    //  */
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  string  $slug
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($slug)
     {

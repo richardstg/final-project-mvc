@@ -1,15 +1,92 @@
 
-Fatal error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 2097160 bytes) in phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Tokenizers/JS.php on line 2
+FILE: C:\Users\jag\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\Auth\ConfirmPasswordController.php
+--------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------------------------------------------------------
+ 22 | ERROR | [x] The first trait import statement must be declared on the first non-comment line after the class opening brace
+--------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------------------------------------------------------
 
-Call Stack:
-    0.0015     405032   1. {main}() C:\Users\jag\dbwebb-kurser\mvc\me\proj\.bin\phpcs:0
-    0.0172     788000   2. PHP_CodeSniffer\Runner->runPHPCS() C:\Users\jag\dbwebb-kurser\mvc\me\proj\.bin\phpcs:6
-    0.3087    4649152   3. PHP_CodeSniffer\Runner->run() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Runner.php:2
-   67.0691   37910920   4. PHP_CodeSniffer\Runner->processFile() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Runner.php:2
-   67.0691   37910920   5. PHP_CodeSniffer\Files\LocalFile->process() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Runner.php:2
-   67.0691   37910920   6. PHP_CodeSniffer\Files\LocalFile->process() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Files/LocalFile.php:2
-   67.0691   37910920   7. PHP_CodeSniffer\Files\LocalFile->parse() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Files/File.php:2
-   67.0691   37911232   8. PHP_CodeSniffer\Tokenizers\JS->__construct() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Files/File.php:2
-   67.0695   37911232   9. PHP_CodeSniffer\Tokenizers\JS->__construct() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Tokenizers/JS.php:2
-   67.0695   37911232  10. PHP_CodeSniffer\Tokenizers\JS->tokenize() phar://C:/Users/jag/dbwebb-kurser/mvc/me/proj/.bin/phpcs/src/Tokenizers/Tokenizer.php:2
+
+FILE: C:\Users\jag\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\Auth\ForgotPasswordController.php
+--------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------------------------------------------------------
+ 21 | ERROR | [x] The first trait import statement must be declared on the first non-comment line after the class opening brace
+--------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: C:\Users\jag\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\Auth\LoginController.php
+--------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------------------------------------------------------
+ 22 | ERROR | [x] The first trait import statement must be declared on the first non-comment line after the class opening brace
+--------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: C:\Users\jag\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\Auth\RegisterController.php
+--------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------------------------------------------------------
+ 25 | ERROR | [x] The first trait import statement must be declared on the first non-comment line after the class opening brace
+--------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: C:\Users\jag\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\Auth\ResetPasswordController.php
+--------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------------------------------------------------------
+ 22 | ERROR | [x] The first trait import statement must be declared on the first non-comment line after the class opening brace
+--------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: C:\Users\jag\dbwebb-kurser\mvc\me\proj\app\Http\Controllers\Auth\VerificationController.php
+--------------------------------------------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------------------------------------------------------
+ 22 | ERROR | [x] The first trait import statement must be declared on the first non-comment line after the class opening brace
+--------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: C:\Users\jag\dbwebb-kurser\mvc\me\proj\app\Models\Post.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 16 | ERROR | [x] Opening brace should be on a new line
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+
+FILE: C:\Users\jag\dbwebb-kurser\mvc\me\proj\app\Models\User.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 45 | ERROR | [x] Opening brace should be on a new line
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+
+FILE: C:\Users\jag\dbwebb-kurser\mvc\me\proj\tests\Unit\Controller\DiceControllersTest.php
+------------------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+------------------------------------------------------------------------------------------
+ 10 | ERROR | [x] Header blocks must be separated by a single blank line
+------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+------------------------------------------------------------------------------------------
+
+Time: 14.8 secs; Memory: 10MB
 

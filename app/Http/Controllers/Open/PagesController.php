@@ -30,11 +30,18 @@ class PagesController extends Controller
             ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
     }
 
+    // /**
+    //  * Post page.
+    //  *
+    //  * @param  string  $slug
+    //  * @return \Illuminate\Http\Response
+    //  */
+
     /**
      * Post page.
      *
      * @param  string  $slug
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function post($slug)
     {
