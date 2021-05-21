@@ -1,21 +1,11 @@
 PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
-......[41;37mF[0m..                                                           9 / 9 (100%)
+............                                                      12 / 12 (100%)
 
-Time: 00:10.129, Memory: 34.00 MB
+Time: 00:12.988, Memory: 36.00 MB
 
-There was 1 failure:
+[30;42mOK (12 tests, 27 assertions)[0m
 
-1) App\Http\Controllers\Restricted\PostsControllerTest::testDestroy
-Response status code [419] is not a redirect status code.
-Failed asserting that false is true.
+Generating code coverage report in Clover XML format ... done [00:00.017]
 
-C:\Users\jag\dbwebb-kurser\mvc\me\proj\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:202
-C:\Users\jag\dbwebb-kurser\mvc\me\proj\tests\Unit\Controller\PostsControllerTest.php:89
-
-[37;41mFAILURES![0m
-[37;41mTests: 9[0m[37;41m, Assertions: 19[0m[37;41m, Failures: 1[0m[37;41m.[0m
-
-Generating code coverage report in Clover XML format ... done [00:00.015]
-
-Generating code coverage report in HTML format ... done [00:00.113]
+Generating code coverage report in HTML format ... done [00:00.108]

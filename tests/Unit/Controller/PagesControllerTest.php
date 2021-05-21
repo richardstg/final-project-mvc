@@ -48,6 +48,17 @@ class PagesControllerTest extends TestCase
         $response->assertViewIs('open.contact');
     }
 
+    /**
+     * Test post
+     */
+    public function testPost()
+    {
+        $response = $this->get('/blog/san-fransisco');
+        $response->assertSuccessful();
+        $response->assertViewIs('open.post');
+        $response->assertViewHas('post');
+    }
+
      /**
      * Test about
      */

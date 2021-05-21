@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Restricted;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+// use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use App\Models\User;
 
@@ -16,13 +18,18 @@ use App\Models\User;
  */
 class PostsControllerTest extends TestCase
 {
+    use DatabaseTransactions;
+
     /**
      * Test index
      */
     public function testIndex()
     {
-        $user = new User(array('name' => 'John'));
-        $this->be($user); // Authenticated
+        // $this->withoutMiddleware();
+        $this->withoutExceptionHandling();
+
+        $user = User::find(1);
+        $this->be($user);
 
         $response = $this->get('/admin');
         $response->assertSuccessful();
@@ -30,62 +37,80 @@ class PostsControllerTest extends TestCase
         $response->assertViewHas('posts');
     }
 
-    // /**
-    //  * Test index
-    //  */
-    // public function testStore()
-    // {
-    //     $user = new User(array('name' => 'John'));
-    //     $this->be($user); // Authenticated
+    /**
+     * Test index
+     */
+    public function testStore()
+    {
+        $this->withoutMiddleware();
+        $this->withoutExceptionHandling();
 
-    //     $response = $this->call('POST', '/admin', [
-    //         'title' => 'mock title',
-    //         'content' => 'just some text',
-    //         'image' => UploadedFile::fake()->image('file.png')->size(1)
-    //     ]);
-    //     $response->assertRedirect("/admin");
+        $user = User::find(1);
+        $this->be($user);
 
-    //     // // Assert the file was stored...
-    //     // Storage::disk('blogimages')->assertExists('file.png');
+        $response = $this->call('POST', '/admin', [
+            'title' => 'mock title',
+            'content' => 'just some text',
+            'image' => UploadedFile::fake()->image('file.png')->size(1),
+        ]);
+        $response->assertRedirect("/admin");
 
-    //     // // Assert a file does not exist...
-    //     // Storage::disk('blogimages')->assertMissing('another_file.png');
-    //     // $response->assertSuccessful();
-    // }
+        // // Assert the file was stored...
+        // Storage::disk('blogimages')->assertExists('file.png');
+
+        // // Assert a file does not exist...
+        // Storage::disk('blogimages')->assertMissing('another_file.png');
+    }
 
     /**
      * Test edit
      */
     public function testEdit()
     {
-        $user = new User(array('name' => 'John'));
-        $this->be($user); // Authenticated
+        // $this->withoutMiddleware();
+        $this->withoutExceptionHandling();
 
-        $response = $this->get('/admin/bangkok-2/edit');
+        $user = User::find(1);
+        $this->be($user);
+
+        $response = $this->get('/admin/san-fransisco/edit');
         $response->assertSuccessful();
         $response->assertViewIs('restricted.update');
         $response->assertViewHas('post');
     }
 
-    // /**
-    //  * Test update
-    //  */
-    // public function testUpdate()
-    // {
-    //     $user = new User(array('name' => 'John'));
-    //     $this->be($user); // Authenticated
-    // }
+    /**
+     * Test update
+     */
+    public function testUpdate()
+    {
+        $this->withoutMiddleware();
+        $this->withoutExceptionHandling();
 
-    // /**
-    //  * Test destroy
-    //  */
-    // public function testDestroy()
-    // {
-    //     $user = new User(array('name' => 'John'));
-    //     $this->be($user); // Authenticated
+        $user = User::find(1);
+        $this->be($user);
 
-    //     $response = $this->delete('/admin/bangkok-2');
-    //     // $response->assertSuccessful();
-    //     $response->assertRedirect("/admin");
-    // }
+        $response = $this->call('PUT', '/admin/san-fransisco', [
+            'title' => 'mock title',
+            'content' => 'just some text',
+            // 'image' => UploadedFile::fake()->image('file.png')->size(1)
+        ]);
+        $response->assertRedirect("/admin");
+    }
+
+    /**
+     * Test destroy
+     */
+    public function testDestroy()
+    {
+       $this->withoutMiddleware();
+       $this->withoutExceptionHandling();
+
+       $user = User::find(1);
+       $this->be($user);
+
+        $response = $this->delete('/admin/san-fransisco');
+        // $response->assertSuccessful();
+        $response->assertRedirect("/admin");
+    }
 }
