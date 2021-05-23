@@ -13,12 +13,13 @@
                     <input type="text" id="title" name="title" value="{{ $post->title }}" class="mb-3"><br>
                     <label for="content">Content:</label><br>
                     <textarea id="content" name="content" rows="8" class="mb-3">{{ $post->content }}</textarea><br>
-                    {{-- <div>
-                        <label>
-                            <span>Select a file</span>
-                            <input type="file" name="image" class="hidden">
+                    <div>
+                        <label class="button button-black-inverse">
+                            Choose image <input type="file" name="image" hidden
+                                onchange="$('#upload-file-info').text(this.files[0].name)">
                         </label>
-                    </div> --}}
+                        <span class='label label-info' id="upload-file-info"></span>
+                    </div>
                     <button type="submit" class="button button-black">Submit</button>
                     @csrf
                     @method('PUT')

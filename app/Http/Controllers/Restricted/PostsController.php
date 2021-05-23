@@ -87,13 +87,6 @@ class PostsController extends Controller
     //  * Display the specified resource.
     //  *
     //  * @param  string  $slug
-    //  * @return \Illuminate\Http\Response
-    //  */
-
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  string  $slug
     //  * @return \Illuminate\Contracts\View\View
     //  */
     // public function show($slug)
@@ -101,13 +94,6 @@ class PostsController extends Controller
     //     return view('open.post')
     //         ->with('post', Post::where('slug', $slug)->first());
     // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  string  $slug
-    //  * @return \Illuminate\Http\Response
-    //  */
 
     /**
      * Show the form for editing the specified resource.
@@ -121,14 +107,6 @@ class PostsController extends Controller
             ->with('post', Post::where('slug', $slug)->first());
     }
 
-    // /**
-    //  * Update the specified resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @param  string  $slug
-    //  * @return \Illuminate\Http\Response
-    //  */
-
     /**
      * Update the specified resource in storage.
      *
@@ -138,6 +116,32 @@ class PostsController extends Controller
      */
     public function update(Request $request, $slug)
     {
+        // dd($request);
+        // die();
+        if ($request->image) {
+            $request->validate([
+                'title' => 'required',
+                'content' => 'required',
+                'image' => 'required|mimes:jpg,png,jpeg|max:5048',
+            ]);
+
+            $image = uniqid() . '-' . $request->title . '.' . $request->image->extension();
+
+            $request->image->move(public_path('blogimages'), $image);
+
+            Post::where('slug', $slug)
+                ->update([
+                    'title' => $request->input('title'),
+                    'content' => $request->input('content'),
+                    'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
+                    'image_path' => $image,
+                    'user_id' => auth()->user()->id
+                ]);
+
+            return redirect('/admin')
+                ->with('message', 'Your post was updated successfully!');
+        }
+
         $request->validate([
             'title' => 'required',
             'content' => 'required',
@@ -156,13 +160,6 @@ class PostsController extends Controller
         return redirect('/admin')
             ->with('message', 'Your post was updated successfully!');
     }
-
-    // /**
-    //  * Remove the specified resource from storage.
-    //  *
-    //  * @param  string  $slug
-    //  * @return \Illuminate\Http\Response
-    //  */
 
     /**
      * Remove the specified resource from storage.

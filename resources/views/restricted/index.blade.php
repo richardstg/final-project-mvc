@@ -33,7 +33,7 @@
                         {{ session('status') }}
                     </div>
                 @endif --}}
-                <form action="" method="POST" enctype="multipart/form-data" class="form">
+                <form action="" method="POST" enctype="multipart/form-data" class="form mb-4">
                     <label for="title">Title:</label><br>
                     <input type="text" id="title" name="title" placeholder="Title..." class="mb-3" required><br>
                     {{-- @error('title')
@@ -64,7 +64,8 @@
                 @foreach ($posts as $post)
                     <div class="row bg-light pt-3 pb-3">
                         <div class="col">
-                            <h3><a href="{{ URL::asset('/') }}blog/{{ $post->slug }}">{{ $post->title }}</a></h3>
+                            <h3><a class="text-dark"
+                                    href="{{ URL::asset('/') }}blog/{{ $post->slug }}">{{ $post->title }}</a></h3>
                             <p class="mb-1">{{ date('jS M Y', strtotime($post->created_at)) }}</p>
                             <p class="mb-1">By {{ $post->user->name }}</p>
                         </div>
