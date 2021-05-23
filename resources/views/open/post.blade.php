@@ -19,8 +19,8 @@
                 <p><a class="text-dark" href=href="{{ URL::asset('/') }}blog">Blog </a>> {{ $post->title }}</p>
                 <h1 class="text-black display-5 mb-3">{{ $post->title }}</h1>
                 <hr class="line-black-left" />
-                <p class="text-dark">{{ date('jS M Y', strtotime($post->created_at)) }}</p>
-                <p class="text-dark">By {{ $post->user->name }}</p>
+                <p>{{ date('jS M Y', strtotime($post->created_at)) }}</p>
+                <p>By {{ $post->user->name }}</p>
                 <div class="position-relative">
                     <div class="noise"></div>
                     <img class="mw-100 mb-3" src='{{ URL::asset('/') }}blogimages/{{ $post->image_path }}' />

@@ -43,6 +43,7 @@ body {
     width: 100%;
     background-size: cover;
     background-position: center;
+    /* border-bottom: 2px solid #2D2D2D; */
     /* text-align: center; */
 }
 
@@ -117,10 +118,18 @@ body {
 
 hr.line-black-left {
     border: 0;
-    height: 2.5px;
+    height: 2.0px;
     background-color: #2D2D2D;
     width: 66px;
     margin-left: 0px;
+}
+
+hr.small-line-white-left {
+    border: 0;
+    height: 2.5px;
+    background-color: #ffffff;
+    width: 130px;
+    margin-left: -30px;
 }
 
 
@@ -239,7 +248,7 @@ hr.line-black-left {
 
 .blog-post-card {
     position: relative;
-    height: 300px;
+    height: 250px;
     background-color: #2D2D2D;
     box-sizing: border-box;
     padding: 20px;
@@ -266,7 +275,7 @@ hr.line-black-left {
     width: 100%;
     height: 100%;
     background-image: url("../img/noisy2.png");
-    opacity: 0.1;
+    opacity: 0.08;
 }
 
 .blog-post-card-content {
@@ -276,8 +285,8 @@ hr.line-black-left {
 
 .blog-post-card:hover {
     /* transform: scale(1.01, 1.01); */
-    transition: all 0.1s ease-in-out;
-    transform: translateY(-2.5%) scale(1.01, 1.01);
+    /* transition: all 0.1s ease-in-out;
+    transform: translateY(-2.5%) scale(1.01, 1.01); */
 }
 
 .blog-post-card-content {
@@ -304,8 +313,6 @@ hr.line-black-left {
     );
 }
 
-
-
 .blog-post-hero {
     position: relative;
     /* background-image: url("../img/hero.jpg"); */
@@ -314,6 +321,15 @@ hr.line-black-left {
     background-size: cover;
     background-position: center;
     text-align: center;
+}
+
+.subscribe {
+    background-color: #2D2D2D;
+}
+
+.subscribe input {
+    border: 1px solid white;
+    outline: none;
 }
 
 .about-hero {
@@ -342,9 +358,12 @@ hr.line-black-left {
     width: 100%;
     bottom: 0px;
     height: 350px;
-    background-color: #2D2D2D;
+    /* background-color: #2D2D2D; */
     /* background-color: #7a7a7a; */
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -432,5 +451,15 @@ hr.line-black-left {
     }
     .hero h2 {
         font-size: 1.0rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .subscribe form {
+        flex-flow: column;
+    }
+    .subscribe input {
+        width: 100% !important;
+        margin-bottom: 16px;
     }
 }

@@ -10,6 +10,7 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('/') }}css/app.css" />
+    <link rel="shortcut icon" href="{{ URL::asset('/') }}favicon.png') }}" type="image/png" />
 </head>
 
 <body>
@@ -43,9 +44,9 @@
         @yield('content')
     </main>
     <footer class="footer pt-5 pb-5">
-        <div class="noise"></div>
+        {{-- <div class="noise"></div> --}}
         <div class="container" style="position: relative; z-index: 5">
-            <span class="text-light">&copy; 2021 TravelBlogger</span>
+            <p class="">&copy; 2021 TravelBlogger</p>
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
