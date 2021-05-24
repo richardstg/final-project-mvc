@@ -7,6 +7,10 @@
         {{-- <h1 class="text-white mb-4"><span class="bg-black px-2">Blog</span></h1> --}}
         <h1 class="text-black mb-0">Blog</h1>
         <hr class="line-black-left" />
+        {{-- pagination --}}
+        <div class="d-flex flex-row-reverse">
+            {{ $posts->links() }}
+        </div>
         <div class="row">
             @foreach ($posts as $post)
                 <div class="col-lg-4 mb-4">
@@ -35,11 +39,9 @@
                 </div>
             @endforeach
         </div>
-        {{-- <div class="bg-black display-flex center-align align-items-center">
-            <div class="noise"></div>
-            <div class="container pt-3 pb-3" style="position: relative; z-index: 5">
-                <h3 class="text-light text-center mb-0">Recent Blog Posts</h3>
-            </div>
-        </div> --}}
+        {{-- pagination --}}
+        <div class="d-flex flex-row-reverse">
+            {{ $posts->links() }}
+        </div>
     </div>
 @endsection

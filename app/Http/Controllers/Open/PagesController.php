@@ -27,7 +27,7 @@ class PagesController extends Controller
     public function blog()
     {
         return view('open.blog')
-            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+            ->with('posts', Post::orderBy('updated_at', 'DESC')->paginate(6));
     }
 
     // /**

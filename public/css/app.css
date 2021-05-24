@@ -136,6 +136,24 @@ hr.small-line-white-left {
     margin-left: -30px;
 }
 
+/* Pagination */
+
+.page-item .page-link {
+    z-index: 3;
+    color: #2D2D2D;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #2D2D2D;
+    border-color:#2D2D2D;
+}
+
+.page-item.disabled .page-link {
+    z-index: 3;
+    color: #7c7c7c;
+}
 
 /* Button styling */
 

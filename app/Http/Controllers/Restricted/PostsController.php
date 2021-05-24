@@ -33,7 +33,7 @@ class PostsController extends Controller
     public function index()
     {
         return view('restricted.index')
-            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+            ->with('posts', Post::orderBy('updated_at', 'DESC')->paginate(6));
     }
 
     // /**
