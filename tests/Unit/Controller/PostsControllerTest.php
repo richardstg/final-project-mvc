@@ -90,10 +90,19 @@ class PostsControllerTest extends TestCase
         $user = User::find(1);
         $this->be($user);
 
+        // Without file
         $response = $this->call('PUT', '/admin/san-fransisco', [
             'title' => 'mock title',
             'content' => 'just some text',
             // 'image' => UploadedFile::fake()->image('file.png')->size(1)
+        ]);
+        $response->assertRedirect("/admin");
+
+        // With file
+        $response = $this->call('PUT', '/admin/san-fransisco', [
+            'title' => 'mock title',
+            'content' => 'just some text',
+            'image' => UploadedFile::fake()->image('file.png')->size(1)
         ]);
         $response->assertRedirect("/admin");
     }

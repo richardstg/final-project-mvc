@@ -116,8 +116,6 @@ class PostsController extends Controller
      */
     public function update(Request $request, $slug)
     {
-        // dd($request);
-        // die();
         if ($request->image) {
             $request->validate([
                 'title' => 'required',
