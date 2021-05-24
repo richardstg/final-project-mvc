@@ -24,8 +24,14 @@ class PagesController extends Controller
     /**
      * Posts page.
      */
-    public function blog()
+    public function blog(Request $request)
     {
+        if ($request->has('search')) {
+            $search = $request->search;
+
+            return view('open.blog')
+                ->with('posts', Post::where('title', 'like', '%' . $search . '%')->orderBy('updated_at', 'DESC')->paginate(6));
+        }
         return view('open.blog')
             ->with('posts', Post::orderBy('updated_at', 'DESC')->paginate(6));
     }

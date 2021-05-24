@@ -32,7 +32,14 @@ class PagesControllerTest extends TestCase
      */
     public function testBlog()
     {
+        // Without search query
         $response = $this->get('/blog');
+        $response->assertSuccessful();
+        $response->assertViewIs('open.blog');
+        $response->assertViewHas('posts');
+
+        // With search query
+        $response = $this->get('/blog?search=');
         $response->assertSuccessful();
         $response->assertViewIs('open.blog');
         $response->assertViewHas('posts');

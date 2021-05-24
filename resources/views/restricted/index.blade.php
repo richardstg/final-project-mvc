@@ -45,25 +45,31 @@
                     @csrf
                 </form>
                 <h2 class="text-center mb-3">Current posts</h2>
-                {{-- pagination --}}
-                <div class="d-flex flex-row-reverse">
-                    {{ $posts->links() }}
+                <div class="blog-posts-header row">
+                    <div class="col-12 col-sm-8 col-md-6">
+                        <form action="{{ URL::asset('/admin') }}" method="GET" class="d-flex w-100 mb-3">
+                            <input class="p-2 w-100" type="text" name="search" placeholder="Search...">
+                            <button class="button button-black">Submit</button>
+                            {{-- @csrf --}}
+                        </form>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        {{-- pagination --}}
+                        {{ $posts->links() }}
+                    </div>
                 </div>
                 @foreach ($posts as $post)
                     <div class="row bg-light pt-3 pb-3 mb-3">
-                        <div class="col overflow-hidden pt-1 pb-1">
+                        <div class="col order-1 order-sm-1 overflow-hidden pt-1 pb-1">
                             <h4><a class="text-dark"
                                     href="{{ URL::asset('/') }}blog/{{ $post->slug }}">{{ $post->title }}</a></h4>
                             <p class="mb-1">{{ date('jS M Y', strtotime($post->created_at)) }}</p>
                             <p class="mb-1">By {{ $post->user->name }}</p>
                         </div>
-                        <div class="col-sm-4 pt-1 pb-1">
-                            {{-- <div class="blog-post-card-bg-image w-50"
-                                style="background-image: url('{{ URL::asset('/') }}blogimages/{{ $post->image_path }}')">
-                            </div> --}}
+                        <div class="col-sm-4 order-3 order-sm-2 pt-1 pb-1">
                             <img class="w-100" src='{{ URL::asset('/') }}blogimages/{{ $post->image_path }}' />
                         </div>
-                        <div class="col d-flex flex-row-reverse pt-1 pb-1">
+                        <div class="col order-2 order-sm-3 d-flex flex-row-reverse pt-1 pb-1">
                             <div>
                                 <button class="button button-black-inverse button-small mb-1"><a
                                         href="{{ URL::asset('/') }}admin/{{ $post->slug }}/edit">Update</a></button><br />

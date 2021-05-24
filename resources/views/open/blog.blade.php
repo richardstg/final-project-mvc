@@ -4,12 +4,20 @@
 
 @section('content')
     <div class="container page-container pt-4 pb-4">
-        {{-- <h1 class="text-white mb-4"><span class="bg-black px-2">Blog</span></h1> --}}
         <h1 class="text-black mb-0">Blog</h1>
         <hr class="line-black-left" />
-        {{-- pagination --}}
-        <div class="d-flex flex-row-reverse">
-            {{ $posts->links() }}
+        <div class="blog-posts-header row">
+            <div class="col-12 col-sm-8 col-md-6">
+                <form action="{{ URL::asset('/blog') }}" method="GET" class="d-flex w-100 mb-3">
+                    <input class="p-2 w-100" type="text" name="search" placeholder="Search...">
+                    <button class="button button-black">Submit</button>
+                    {{-- @csrf --}}
+                </form>
+            </div>
+            <div class="col d-flex justify-content-end">
+                {{-- pagination --}}
+                {{ $posts->links() }}
+            </div>
         </div>
         <div class="row">
             @foreach ($posts as $post)
@@ -23,11 +31,6 @@
                             </div>
                             {{-- <div class="overlay-dark"></div> --}}
                             <div class="blog-post-card-content">
-                                {{-- <h2 class="text-white">{{ $post->title }}</h2>
-                                <hr class="small-line-black-left" />
-                                <p class="text-light mb-1">{{ date('jS M Y', strtotime($post->created_at)) }}</p>
-                                <p class="text-light mb-1">By {{ $post->user->name }}</p> --}}
-                                {{-- <p class="text-light mb-1 mt-5">{{ substr($post->content, 0, 90) }}...</p> --}}
                             </div>
                         </div>
                     </a>

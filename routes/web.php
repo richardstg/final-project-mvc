@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Public routes
 Route::get('/', 'App\Http\Controllers\Open\PagesController@index');
 Route::get('/blog', 'App\Http\Controllers\Open\PagesController@blog');
+// Route::post('/blog/search', 'App\Http\Controllers\Open\SearchController@searchBlog');
 Route::get('/blog/{slug}', 'App\Http\Controllers\Open\PagesController@post');
 Route::get('/about', 'App\Http\Controllers\Open\PagesController@about');
 Route::get('/contact', 'App\Http\Controllers\Open\PagesController@contact');

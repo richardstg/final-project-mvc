@@ -9,29 +9,24 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth', ['except' => ['show']]);
-    // }
-
     public function __construct()
     {
         $this->middleware('auth');
     }
-
-    // /**
-    //  * Display a listing of the resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->has('search')) {
+            $search = $request->search;
+
+            return view('restricted.index')
+                ->with('posts', Post::where('title', 'like', '%' . $search . '%')->orderBy('updated_at', 'DESC')->paginate(6));
+        }
         return view('restricted.index')
             ->with('posts', Post::orderBy('updated_at', 'DESC')->paginate(6));
     }
