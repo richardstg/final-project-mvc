@@ -30,10 +30,10 @@ class PagesController extends Controller
             $search = $request->search;
 
             return view('open.blog')
-                ->with('posts', Post::where('title', 'like', '%' . $search . '%')->orderBy('updated_at', 'DESC')->paginate(6));
+                ->with('posts', Post::where('title', 'like', '%' . $search . '%')->orderBy('updated_at', 'DESC')->paginate(9));
         }
         return view('open.blog')
-            ->with('posts', Post::orderBy('updated_at', 'DESC')->paginate(6));
+            ->with('posts', Post::orderBy('updated_at', 'DESC')->paginate(9));
     }
 
     // /**
