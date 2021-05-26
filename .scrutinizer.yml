@@ -21,10 +21,9 @@ build:
         override:
           - php-scrutinizer-run
 
-    tests-and-coverage:
-      tests:
-        override:
-          - command: "make phpunit"
-            coverage:
-              file: "build/coverage.clover"
-              format: "php-clover"
+  tests:
+    override:
+      - command: "make phpunit"
+        coverage:
+          file: "build/coverage.clover"
+          format: "clover"
