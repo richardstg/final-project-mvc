@@ -1,0 +1,50 @@
+ ------ --------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\Auth\RegisterController.php              [39m 
+ ------ --------------------------------------------------------------- 
+  66     Call to an undefined static method App\Models\User::create().  
+ ------ --------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\Open\PagesController.php                     [39m 
+ ------ ------------------------------------------------------------------- 
+  21     Call to an undefined static method App\Models\Post::orderBy().     
+  30     Access to an undefined property Illuminate\Http\Request::$search.  
+  33     Call to an undefined static method App\Models\Post::where().       
+  36     Call to an undefined static method App\Models\Post::orderBy().     
+  55     Call to an undefined static method App\Models\Post::where().       
+ ------ ------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Controllers\Restricted\PostsController.php                             [39m 
+ ------ --------------------------------------------------------------------------------- 
+  25     Access to an undefined property Illuminate\Http\Request::$search.                
+  28     Call to an undefined static method App\Models\Post::where().                     
+  31     Call to an undefined static method App\Models\Post::orderBy().                   
+  65     Access to an undefined property Illuminate\Http\Request::$image.                 
+  65     Access to an undefined property Illuminate\Http\Request::$title.                 
+  67     Access to an undefined property Illuminate\Http\Request::$image.                 
+  70     Call to an undefined static method App\Models\Post::create().                    
+  73     Access to an undefined property Illuminate\Http\Request::$title.                 
+  75     Access to an undefined property Illuminate\Contracts\Auth\Authenticatable::$id.  
+  102    Call to an undefined static method App\Models\Post::where().                     
+  114    Access to an undefined property Illuminate\Http\Request::$image.                 
+  121    Access to an undefined property Illuminate\Http\Request::$title.                 
+  125    Call to an undefined static method App\Models\Post::where().                     
+  129    Access to an undefined property Illuminate\Http\Request::$title.                 
+  131    Access to an undefined property Illuminate\Contracts\Auth\Authenticatable::$id.  
+  144    Call to an undefined static method App\Models\Post::where().                     
+  148    Access to an undefined property Illuminate\Http\Request::$title.                 
+  150    Access to an undefined property Illuminate\Contracts\Auth\Authenticatable::$id.  
+  165    Call to an undefined static method App\Models\Post::where().                     
+ ------ --------------------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m app\Http\Middleware\Authenticate.php                                                                              [39m 
+ ------ ------------------------------------------------------------------------------------------------------------------- 
+  20     Method App\Http\Middleware\Authenticate::redirectTo() should return string|null but empty return statement found.  
+ ------ ------------------------------------------------------------------------------------------------------------------- 
+
+[37;41m                                                                                                                        [39;49m
+[37;41m [ERROR] Found 26 errors                                                                                                [39;49m
+[37;41m                                                                                                                        [39;49m
+

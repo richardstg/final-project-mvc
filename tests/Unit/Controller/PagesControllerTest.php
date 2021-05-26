@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
-// use App\Models\User;
-
-// use Illuminate\Http\Response;
-// use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 /**
  * Test cases for PostsController
@@ -39,7 +35,7 @@ class PagesControllerTest extends TestCase
         $response->assertViewHas('posts');
 
         // With search query
-        $response = $this->get('/blog?search=');
+        $response = $this->get('/blog?search=paris');
         $response->assertSuccessful();
         $response->assertViewIs('open.blog');
         $response->assertViewHas('posts');

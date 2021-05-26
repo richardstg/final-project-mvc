@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers\Restricted;
 
-use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
-// use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use App\Models\User;
-
-// use Illuminate\Http\Response;
-// use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 /**
  * Test cases for PostsController
@@ -25,13 +19,19 @@ class PostsControllerTest extends TestCase
      */
     public function testIndex()
     {
-        // $this->withoutMiddleware();
         $this->withoutExceptionHandling();
 
         $user = User::find(1);
         $this->be($user);
 
+        // Without search query
         $response = $this->get('/admin');
+        $response->assertSuccessful();
+        $response->assertViewIs('restricted.index');
+        $response->assertViewHas('posts');
+
+        // With search query
+        $response = $this->get('/admin?search=paris');
         $response->assertSuccessful();
         $response->assertViewIs('restricted.index');
         $response->assertViewHas('posts');
@@ -112,14 +112,13 @@ class PostsControllerTest extends TestCase
      */
     public function testDestroy()
     {
-       $this->withoutMiddleware();
-       $this->withoutExceptionHandling();
+        $this->withoutMiddleware();
+        $this->withoutExceptionHandling();
 
-       $user = User::find(1);
-       $this->be($user);
+        $user = User::find(1);
+        $this->be($user);
 
         $response = $this->delete('/admin/san-fransisco');
-        // $response->assertSuccessful();
         $response->assertRedirect("/admin");
     }
 }
